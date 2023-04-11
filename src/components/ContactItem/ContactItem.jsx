@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import css from './ContactItem.module.css'
 
 function ContactItem({ id, name, number, onDeleteContact }) {
   return (
-    <div>
-      <p>{name}:</p>
-      <a href={`tel:${number}`}>{number}</a>
-      <button type="buton" onClick={() => onDeleteContact(id)}>
+    <div className={css.wraper}>
+      <p className={css.name}>{name}:</p>
+      <a className={css.tel} href={`tel:${number}`}>{number}</a>
+      <button className={css.btn} type="buton" onClick={() => onDeleteContact(id)}>
         Delete
       </button>
     </div>

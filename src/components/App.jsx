@@ -4,6 +4,7 @@ import contactListTest from '../data/contactListTest.json';
 import ContactForm from './ContactForm/ContactForm';
 import ContactList from './ContactList/ContactList';
 import Filter from './Filter/Filter';
+import css from './App.module.css'
 
 class App extends React.Component {
   state = {
@@ -60,10 +61,10 @@ class App extends React.Component {
     const visibleContact = this.getVisibleContacts();
 
     return (
-      <div>
-        <h1>Phonebook</h1>
+      <div className={css.wraper}>
+        <h1 className={css.title}>Phonebook</h1>
         <ContactForm onSubmit={this.addContact} />
-        <h2>Contacts</h2>
+        <h2 className={css.title__contact}>Contacts</h2>
         <Filter
           label="Find contacts by name"
           value={this.state.filter}

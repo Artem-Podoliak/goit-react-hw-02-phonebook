@@ -1,15 +1,17 @@
 import React from 'react';
 import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
+import css from './Filter.module.css'
 
 function Filter({ label, value, onChange }) {
   const filterId = nanoid();
 
   return (
-    <div>
-      <label htmlFor={filterId}>
+    <div className={css.wraper}>
+      <label className={css.label} htmlFor={filterId}>
         {label}
         <input
+          className={css.input}
           type="text"
           placeholder="Search field"
           id={filterId}
